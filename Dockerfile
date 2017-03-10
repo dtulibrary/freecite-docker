@@ -11,6 +11,7 @@ ADD src/install_crfpp.sh install_crfpp.sh
 RUN bash install_crfpp.sh
 WORKDIR /myapp
 ADD Gemfile Gemfile
-RUN bundle install
 ADD . /myapp
+RUN bundle install
 
+CMD ["rackup", "--host", "0.0.0.0"]
